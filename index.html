@@ -400,7 +400,7 @@ footer {
   color: var(--blue);
 }
 
-/* Mobile layout: image first */
+/* Mobile layout */
 @media (max-width: 760px) {
   .page {
     width: min(calc(100% - 28px), 560px);
@@ -415,16 +415,44 @@ footer {
   }
 
   .hero {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 28px;
-    padding: 35px 0 32px;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 40px 0 32px;
+    align-items: start;
+  }
+
+  .hero > div:first-child {
+    display: contents;
+  }
+
+  .hero .eyebrow {
+    order: 1;
+  }
+
+  .hero h1 {
+    order: 2;
+    margin-top: 0;
+  }
+
+  .hero .role {
+    order: 3;
+    margin-bottom: 0;
+  }
+
+  .hero .intro {
+    order: 4;
+    margin-bottom: 0;
   }
 
   .profile-wrap {
+    order: 5;
     width: min(100%, 320px);
     margin: 0 auto;
+  }
+
+  .hero .actions {
+    order: 6;
   }
 
   .profile-card {
@@ -433,6 +461,19 @@ footer {
 
   .portrait {
     height: 270px;
+  }
+
+  .hero .eyebrow,
+  .hero h1,
+  .hero .role,
+  .hero .intro,
+  .hero .actions,
+  .profile-wrap {
+    grid-column: 1;
+  }
+
+  .hero .eyebrow {
+    margin-bottom: -10px;
   }
 
   h1 {
@@ -445,10 +486,6 @@ footer {
 
   .actions {
     gap: 9px;
-  }
-
-  .btn {
-    flex-grow: 0;
   }
 
   .section {
@@ -489,6 +526,7 @@ footer {
     <span class="brand-mark">SM</span>
     <span>SALAH MOSTAFA<small>AI ENGINEER</small></span>
   </a>
+
   <div class="availability">
     <span class="dot"></span>
     Open to opportunities
@@ -499,7 +537,7 @@ footer {
 
 <section class="hero">
 
-<div>
+<div class="hero-content">
   <div class="eyebrow">Hello, world! &nbsp; / &nbsp; Welcome to my space</div>
 
   <h1>Salah Eldin <span>Mostafa.</span></h1>
@@ -547,16 +585,14 @@ footer {
     <div class="portrait">
       <img
         id="profileImage"
-        src="./images/WhatsApp Image 2026-10-13 at 2.46.29 AM.jpeg"
+        src="./images/WhatsApp%20Image%202026-10-13%20at%202.12.57%20AM.jpeg"
         alt="Portrait of Salah Eldin Mostafa"
       >
 
       <div class="placeholder" id="imagePlaceholder">
         <div class="avatar-symbol">⌘</div>
         <strong>YOUR PHOTO GOES HERE</strong>
-        <p>
-          Add your picture to the images folder and update the image filename.
-        </p>
+        <p>Add your picture to the images folder.</p>
       </div>
     </div>
 
@@ -599,7 +635,6 @@ footer {
 
 <section class="section">
   <div class="bottom-grid">
-
     <div class="info-panel">
       <div class="eyebrow">A little about me</div>
       <h3>Curiosity into creation.</h3>
@@ -616,7 +651,6 @@ footer {
         “The future belongs to those who <span>build it.</span>”
       </p>
     </div>
-
   </div>
 </section>
 
