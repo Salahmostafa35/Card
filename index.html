@@ -1,49 +1,733 @@
+
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#070914">
-
-<meta name="description" content="Salah Eldin Mostafa — AI Engineer, Computer Vision and Machine Learning."><title>Salah Eldin Mostafa | AI Engineer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#070914">
+<meta name="description" content="Salah Eldin Mostafa — AI Engineer, Computer Vision and Machine Learning.">
+<title>Salah Eldin Mostafa | AI Engineer</title>
 
 <style>
+:root {
+  --bg: #070914;
+  --text: #f5f7ff;
+  --muted: #a4aecb;
+  --blue: #42c7ff;
+  --purple: #a66cff;
+  --line: rgba(112,143,255,.2);
+}
 
-:root{--bg:#070914;--text:#f5f7ff;--muted:#a4aecb;--blue:#42c7ff;--purple:#a66cff;--line:rgba(112,143,255,.2)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--text);background:radial-gradient(ellipse at 14% 5%,rgba(39,107,220,.18),transparent 34rem),radial-gradient(ellipse at 90% 40%,rgba(139,63,229,.15),transparent 30rem),var(--bg);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.14;background-image:linear-gradient(rgba(110,140,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(110,140,255,.12) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,black,transparent 85%)}a{color:inherit;text-decoration:none}.page{width:min(1120px,calc(100% - 36px));margin:auto;position:relative}header{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-bottom:1px solid rgba(140,160,255,.12)}.brand{display:flex;gap:12px;align-items:center;font-weight:800;letter-spacing:.04em}.brand-mark{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:linear-gradient(135deg,rgba(66,199,255,.18),rgba(166,108,255,.18));border:1px solid rgba(92,198,255,.5);color:var(--blue);box-shadow:0 0 25px rgba(66,199,255,.12);font-size:14px}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:.2em;margin-top:3px}.availability{color:#b7c5e5;font-size:12px;display:flex;align-items:center;gap:8px}.dot{width:7px;height:7px;border-radius:50%;background:#52edb3;box-shadow:0 0 12px #52edb3}.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:52px;align-items:center;padding:72px 0 54px}.eyebrow{color:var(--blue);text-transform:uppercase;letter-spacing:.22em;font-size:11px;font-weight:800}h1{font-size:clamp(2.7rem,5.5vw,4.7rem);line-height:.99;letter-spacing:-.055em;margin:18px 0 16px}h1 span{display:block;background:linear-gradient(90deg,var(--blue),#9c91ff 75%);-webkit-background-clip:text;background-clip:text;color:transparent}.role{font-size:17px;color:#d6def7;margin-bottom:20px}.role b{color:var(--blue);font-weight:600}.intro{color:var(--muted);font-size:15px;line-height:1.8;max-width:540px;margin:0 0 28px}.actions{display:flex;flex-wrap:wrap;gap:11px}.btn{display:inline-flex;justify-content:center;align-items:center;gap:9px;min-height:46px;padding:0 16px;border:1px solid var(--line);border-radius:12px;background:rgba(17,23,45,.82);color:#edf3ff;font-size:13px;font-weight:700;transition:transform .2s,border-color .2s,box-shadow .2s;cursor:pointer;font-family:inherit}.btn:hover{transform:translateY(-2px);border-color:rgba(66,199,255,.7);box-shadow:0 8px 28px rgba(66,199,255,.1)}.btn.primary{background:linear-gradient(110deg,#168fc9,#6d54d9);border-color:transparent;box-shadow:0 8px 28px rgba(67,126,255,.2)}.ico{font-size:16px;width:18px;text-align:center}.profile-wrap{position:relative;min-width:0}.profile-glow{position:absolute;width:72%;aspect-ratio:1;border-radius:50%;top:8%;left:14%;background:linear-gradient(135deg,rgba(28,190,255,.22),rgba(143,73,255,.2));filter:blur(42px)}.profile-card{position:relative;border:1px solid rgba(105,149,255,.35);border-radius:26px;background:linear-gradient(145deg,rgba(20,29,58,.92),rgba(10,13,29,.95));padding:15px;box-shadow:0 25px 80px rgba(0,0,0,.35),inset 0 1px rgba(255,255,255,.05);transform:rotate(1deg)}.portrait{height:310px;border-radius:18px;position:relative;overflow:hidden;display:grid;place-items:center;background:radial-gradient(circle at 50% 30%,rgba(65,198,255,.24),transparent 34%),linear-gradient(145deg,#152b4b,#111127 55%,#251746);border:1px solid rgba(95,180,255,.17)}.portrait img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;display:none}.placeholder{text-align:center;color:#c9eaff;position:relative;padding:20px}.avatar-symbol{font-size:70px;filter:drop-shadow(0 0 24px rgba(66,199,255,.45))}.placeholder p{font-size:12px;color:#a9bbdf;line-height:1.6}.card-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:17px 5px 4px}.card-footer strong{font-size:13px;display:block}.card-footer small{display:block;color:var(--muted);margin-top:5px;font-size:11px}.chip{border:1px solid rgba(66,199,255,.28);border-radius:999px;padding:8px 10px;color:var(--blue);font-size:10px;white-space:nowrap}.section{padding:28px 0 52px}.section-heading{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}h2{margin:9px 0 0;font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.035em}.section-note{color:var(--muted);font-size:12px}.skills{display:flex;flex-wrap:wrap;gap:10px}.skill{padding:11px 15px;border-radius:10px;border:1px solid rgba(120,144,255,.18);background:rgba(15,21,42,.74);color:#d6def6;font-size:12px}.skill:before{content:"✦";color:var(--blue);margin-right:8px}.bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.info-panel{padding:24px;border-radius:18px;border:1px solid var(--line);background:rgba(17,22,43,.78);min-width:0}.info-panel h3{margin:0 0 10px;font-size:15px}.info-panel p{color:var(--muted);line-height:1.7;font-size:13px;margin:0}.quote{color:#dce7ff!important;font-size:16px!important}.quote span{color:var(--blue)}footer{display:flex;justify-content:space-between;gap:14px;padding:24px 0 32px;border-top:1px solid rgba(140,160,255,.12);color:#7f8aaa;font-size:11px}.social-links{display:flex;gap:15px}.social-links a:hover{color:var(--blue)}
+* {
+  box-sizing: border-box;
+}
 
-@media(max-width:760px){.page{width:min(calc(100% - 28px),560px)}header{padding:18px 0}.availability{font-size:10px}.hero{grid-template-columns:1fr;gap:34px;padding:46px 0 32px}h1{font-size:clamp(2.8rem,13vw,4.2rem)}.intro{font-size:14px}.profile-wrap{width:min(100%,420px);margin:auto}.portrait{height:270px}.section{padding:22px 0 36px}.bottom-grid{grid-template-columns:1fr}.section-heading{align-items:start;flex-direction:column;gap:8px}footer{flex-direction:column}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+html {
+  scroll-behavior: smooth;
+}
 
-</style></head>
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at 14% 5%, rgba(39,107,220,.18), transparent 34rem),
+    radial-gradient(ellipse at 90% 40%, rgba(139,63,229,.15), transparent 30rem),
+    var(--bg);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  overflow-x: hidden;
+}
 
-<body><div class="page"><header><a class="brand" href="#top" aria-label="Back to top"><span class="brand-mark">SM</span><span>SALAH MOSTAFA<small>AI ENGINEER</small></span></a><div class="availability"><span class="dot"></span> Open to opportunities</div></header>
+body:before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .14;
+  background-image:
+    linear-gradient(rgba(110,140,255,.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(110,140,255,.12) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
 
-<main id="top"><section class="hero"><div><div class="eyebrow">Hello, world! &nbsp; / &nbsp; Welcome to my space</div><h1>Salah Eldin <span>Mostafa.</span></h1><div class="role">AI Engineer <b>·</b> Computer Vision <b>·</b> Machine Learning</div><p class="intro">I build intelligent systems that turn complex data into practical solutions. Passionate about AI, computer vision, and creating technology that makes a real impact.</p>
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-<div class="actions"><a class="btn primary" href="#" data-link="linkedin"><span class="ico">in</span> LinkedIn ↗</a><a class="btn" href="#" data-link="github"><span class="ico">⌘</span> GitHub ↗</a><a class="btn" href="#" data-link="cv"><span class="ico">▤</span> View CV ↗</a><a class="btn" href="#" data-link="email"><span class="ico">✉</span> Email ↗</a><a class="btn" href="#" data-link="whatsapp"><span class="ico">☏</span> WhatsApp ↗</a><button class="btn" id="saveContact" type="button"><span class="ico">＋</span> Save Contact</button></div></div>
+.page {
+  width: min(1120px, calc(100% - 36px));
+  margin: auto;
+  position: relative;
+}
 
-<div class="profile-wrap"><div class="profile-glow"></div><div class="profile-card"><div class="portrait"><img id="profileImage" src="./images/WhatsApp Image 2026-10-13 at 2.12.57 AM.jpeg" alt="Portrait of Salah Eldin Mostafa"><div class="placeholder" id="imagePlaceholder"><div class="avatar-symbol">⌘</div><strong>YOUR PHOTO GOES HERE</strong><p>Add your picture and name it <b>profile.jpg</b><br>in the same folder as this file.</p></div></div><div class="card-footer"><div><strong>SALAH ELDIN MOSTAFA</strong><small>Building what's next with AI.</small></div><span class="chip">AVAILABLE FOR WORK</span></div></div></div></section>
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(140,160,255,.12);
+}
 
-<section class="section" id="skills"><div class="section-heading"><div><div class="eyebrow">My toolkit</div><h2>Skills &amp; Technologies</h2></div><div class="section-note">A few tools I work with</div></div><div class="skills"><span class="skill">Python</span><span class="skill">PyTorch</span><span class="skill">TensorFlow</span><span class="skill">OpenCV</span><span class="skill">Machine Learning</span><span class="skill">Deep Learning</span><span class="skill">Computer Vision</span><span class="skill">NLP</span><span class="skill">FastAPI</span><span class="skill">Docker</span><span class="skill">Git &amp; GitHub</span><span class="skill">SQL</span></div></section>
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
 
-<section class="section"><div class="bottom-grid"><div class="info-panel"><div class="eyebrow">A little about me</div><h3>Curiosity into creation.</h3><p>I enjoy solving real-world problems with AI — from computer vision and intelligent automation to building end-to-end machine learning applications.</p></div><div class="info-panel"><div class="eyebrow">My philosophy</div><h3>Think. Build. Improve.</h3><p class="quote">“The future belongs to those who <span>build it.</span>”</p></div></div></section></main>
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: linear-gradient(135deg, rgba(66,199,255,.18), rgba(166,108,255,.18));
+  border: 1px solid rgba(92,198,255,.5);
+  color: var(--blue);
+  box-shadow: 0 0 25px rgba(66,199,255,.12);
+  font-size: 14px;
+}
 
-<footer><span>© <span id="year"></span> Salah Eldin Mostafa. Built with curiosity &amp; code.</span><div class="social-links"><a href="#" data-link="linkedin">LinkedIn</a><a href="#" data-link="github">GitHub</a><a href="#" data-link="whatsapp">WhatsApp</a><a href="mailto:salahmostafa170204@gmail.com" id="emailLink">Email</a></div></footer></div>
+.brand small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: .2em;
+  margin-top: 3px;
+}
+
+.availability {
+  color: #b7c5e5;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #52edb3;
+  box-shadow: 0 0 12px #52edb3;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.08fr .92fr;
+  gap: 52px;
+  align-items: center;
+  padding: 72px 0 54px;
+}
+
+.eyebrow {
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+h1 {
+  font-size: clamp(2.7rem, 5.5vw, 4.7rem);
+  line-height: .99;
+  letter-spacing: -.055em;
+  margin: 18px 0 16px;
+}
+
+h1 span {
+  display: block;
+  background: linear-gradient(90deg, var(--blue), #9c91ff 75%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.role {
+  font-size: 17px;
+  color: #d6def7;
+  margin-bottom: 20px;
+}
+
+.role b {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.intro {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 540px;
+  margin: 0 0 28px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  min-height: 46px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(17,23,45,.82);
+  color: #edf3ff;
+  font-size: 13px;
+  font-weight: 700;
+  transition: transform .2s, border-color .2s, box-shadow .2s;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(66,199,255,.7);
+  box-shadow: 0 8px 28px rgba(66,199,255,.1);
+}
+
+.btn.primary {
+  background: linear-gradient(110deg, #168fc9, #6d54d9);
+  border-color: transparent;
+  box-shadow: 0 8px 28px rgba(67,126,255,.2);
+}
+
+.ico {
+  font-size: 16px;
+  width: 18px;
+  text-align: center;
+}
+
+.profile-wrap {
+  position: relative;
+  min-width: 0;
+}
+
+.profile-glow {
+  position: absolute;
+  width: 72%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  top: 8%;
+  left: 14%;
+  background: linear-gradient(135deg, rgba(28,190,255,.22), rgba(143,73,255,.2));
+  filter: blur(42px);
+}
+
+.profile-card {
+  position: relative;
+  border: 1px solid rgba(105,149,255,.35);
+  border-radius: 26px;
+  background: linear-gradient(145deg, rgba(20,29,58,.92), rgba(10,13,29,.95));
+  padding: 15px;
+  box-shadow: 0 25px 80px rgba(0,0,0,.35), inset 0 1px rgba(255,255,255,.05);
+  transform: rotate(1deg);
+}
+
+.portrait {
+  height: 310px;
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(65,198,255,.24), transparent 34%),
+    linear-gradient(145deg, #152b4b, #111127 55%, #251746);
+  border: 1px solid rgba(95,180,255,.17);
+}
+
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  display: none;
+}
+
+.placeholder {
+  text-align: center;
+  color: #c9eaff;
+  position: relative;
+  padding: 20px;
+}
+
+.avatar-symbol {
+  font-size: 70px;
+  filter: drop-shadow(0 0 24px rgba(66,199,255,.45));
+}
+
+.placeholder p {
+  font-size: 12px;
+  color: #a9bbdf;
+  line-height: 1.6;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 17px 5px 4px;
+}
+
+.card-footer strong {
+  font-size: 13px;
+  display: block;
+}
+
+.card-footer small {
+  display: block;
+  color: var(--muted);
+  margin-top: 5px;
+  font-size: 11px;
+}
+
+.chip {
+  border: 1px solid rgba(66,199,255,.28);
+  border-radius: 999px;
+  padding: 8px 10px;
+  color: var(--blue);
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.section {
+  padding: 28px 0 52px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+h2 {
+  margin: 9px 0 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: -.035em;
+}
+
+.section-note {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill {
+  padding: 11px 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(120,144,255,.18);
+  background: rgba(15,21,42,.74);
+  color: #d6def6;
+  font-size: 12px;
+}
+
+.skill:before {
+  content: "✦";
+  color: var(--blue);
+  margin-right: 8px;
+}
+
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.info-panel {
+  padding: 24px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: rgba(17,22,43,.78);
+  min-width: 0;
+}
+
+.info-panel h3 {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+.info-panel p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 13px;
+  margin: 0;
+}
+
+.quote {
+  color: #dce7ff !important;
+  font-size: 16px !important;
+}
+
+.quote span {
+  color: var(--blue);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 24px 0 32px;
+  border-top: 1px solid rgba(140,160,255,.12);
+  color: #7f8aaa;
+  font-size: 11px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a:hover {
+  color: var(--blue);
+}
+
+/* Mobile layout: image first */
+@media (max-width: 760px) {
+  .page {
+    width: min(calc(100% - 28px), 560px);
+  }
+
+  header {
+    padding: 18px 0;
+  }
+
+  .availability {
+    font-size: 10px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 28px;
+    padding: 35px 0 32px;
+    align-items: stretch;
+  }
+
+  .profile-wrap {
+    width: min(100%, 320px);
+    margin: 0 auto;
+  }
+
+  .profile-card {
+    transform: none;
+  }
+
+  .portrait {
+    height: 270px;
+  }
+
+  h1 {
+    font-size: clamp(2.8rem, 13vw, 4.2rem);
+  }
+
+  .intro {
+    font-size: 14px;
+  }
+
+  .actions {
+    gap: 9px;
+  }
+
+  .btn {
+    flex-grow: 0;
+  }
+
+  .section {
+    padding: 22px 0 36px;
+  }
+
+  .bottom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+<header>
+  <a class="brand" href="#top" aria-label="Back to top">
+    <span class="brand-mark">SM</span>
+    <span>SALAH MOSTAFA<small>AI ENGINEER</small></span>
+  </a>
+  <div class="availability">
+    <span class="dot"></span>
+    Open to opportunities
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+
+<div>
+  <div class="eyebrow">Hello, world! &nbsp; / &nbsp; Welcome to my space</div>
+
+  <h1>Salah Eldin <span>Mostafa.</span></h1>
+
+  <div class="role">
+    AI Engineer <b>·</b> Computer Vision <b>·</b> Machine Learning
+  </div>
+
+  <p class="intro">
+    I build intelligent systems that turn complex data into practical solutions.
+    Passionate about AI, computer vision, and creating technology that makes a real impact.
+  </p>
+
+  <div class="actions">
+    <a class="btn primary" href="#" data-link="linkedin">
+      <span class="ico">in</span> LinkedIn ↗
+    </a>
+
+    <a class="btn" href="#" data-link="github">
+      <span class="ico">⌘</span> GitHub ↗
+    </a>
+
+    <a class="btn" href="#" data-link="cv">
+      <span class="ico">▤</span> View CV ↗
+    </a>
+
+    <a class="btn" href="#" data-link="email">
+      <span class="ico">✉</span> Email ↗
+    </a>
+
+    <a class="btn" href="#" data-link="whatsapp">
+      <span class="ico">☏</span> WhatsApp ↗
+    </a>
+
+    <button class="btn" id="saveContact" type="button">
+      <span class="ico">＋</span> Save Contact
+    </button>
+  </div>
+</div>
+
+<div class="profile-wrap">
+  <div class="profile-glow"></div>
+
+  <div class="profile-card">
+    <div class="portrait">
+      <img
+        id="profileImage"
+        src="./images/WhatsApp Image 2026-10-13 at 2.46.29 AM.jpeg"
+        alt="Portrait of Salah Eldin Mostafa"
+      >
+
+      <div class="placeholder" id="imagePlaceholder">
+        <div class="avatar-symbol">⌘</div>
+        <strong>YOUR PHOTO GOES HERE</strong>
+        <p>
+          Add your picture to the images folder and update the image filename.
+        </p>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div>
+        <strong>SALAH ELDIN MOSTAFA</strong>
+        <small>Building what's next with AI.</small>
+      </div>
+      <span class="chip">AVAILABLE FOR WORK</span>
+    </div>
+  </div>
+</div>
+
+</section>
+
+<section class="section" id="skills">
+  <div class="section-heading">
+    <div>
+      <div class="eyebrow">My toolkit</div>
+      <h2>Skills &amp; Technologies</h2>
+    </div>
+    <div class="section-note">A few tools I work with</div>
+  </div>
+
+  <div class="skills">
+    <span class="skill">Python</span>
+    <span class="skill">PyTorch</span>
+    <span class="skill">TensorFlow</span>
+    <span class="skill">OpenCV</span>
+    <span class="skill">Machine Learning</span>
+    <span class="skill">Deep Learning</span>
+    <span class="skill">Computer Vision</span>
+    <span class="skill">NLP</span>
+    <span class="skill">FastAPI</span>
+    <span class="skill">Docker</span>
+    <span class="skill">Git &amp; GitHub</span>
+    <span class="skill">SQL</span>
+  </div>
+</section>
+
+<section class="section">
+  <div class="bottom-grid">
+
+    <div class="info-panel">
+      <div class="eyebrow">A little about me</div>
+      <h3>Curiosity into creation.</h3>
+      <p>
+        I enjoy solving real-world problems with AI — from computer vision
+        and intelligent automation to building end-to-end machine learning applications.
+      </p>
+    </div>
+
+    <div class="info-panel">
+      <div class="eyebrow">My philosophy</div>
+      <h3>Think. Build. Improve.</h3>
+      <p class="quote">
+        “The future belongs to those who <span>build it.</span>”
+      </p>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span>
+    © <span id="year"></span> Salah Eldin Mostafa. Built with curiosity &amp; code.
+  </span>
+
+  <div class="social-links">
+    <a href="#" data-link="linkedin">LinkedIn</a>
+    <a href="#" data-link="github">GitHub</a>
+    <a href="#" data-link="whatsapp">WhatsApp</a>
+    <a href="mailto:salahmostafa170204@gmail.com" id="emailLink">Email</a>
+  </div>
+</footer>
+
+</div>
 
 <script>
+const CONFIG = {
+  name: "Salah Eldin Mostafa",
+  role: "AI Engineer",
+  email: "salahmostafa170204@gmail.com",
+  phone: "+201113021427",
+  linkedin: "https://www.linkedin.com/in/salah-mostafa-4aa93b2bb",
+  github: "https://github.com/Salahmostafa35",
+  cv: "https://github.com/Salahmostafa35/Card/blob/main/SALAH%20EL%20DIN%20MOSTAFA.pdf",
+  whatsapp: "https://wa.me/qr/6GTMN52U3L5XH1"
+};
 
-// EDIT THESE VALUES WITH YOUR OWN LINKS AND CONTACT DETAILS.
+document.getElementById("year").textContent = new Date().getFullYear();
 
+<<<<<<< HEAD
 const CONFIG={name:"Salah Eldin Mostafa",role:"AI Engineer",email:"salahmostafa170204@gmail.com",phone:"+201113021427",linkedin:"https://www.linkedin.com/in/salah-mostafa-4aa93b2bb",github:"https://github.com/Salahmostafa35",cv:"https://github.com/Salahmostafa35/Card/raw/refs/heads/main/SALAH%20EL%20DIN%20MOSTAFA.pdf",whatsapp:"https://wa.me/qr/6GTMN52U3L5XH1"};
+=======
+const photo = document.getElementById("profileImage");
+const placeholder = document.getElementById("imagePlaceholder");
+>>>>>>> 2632752 (Move profile photo above content on mobile)
 
-document.getElementById('year').textContent=new Date().getFullYear();
+function showPhoto() {
+  photo.style.display = "block";
+  placeholder.style.display = "none";
+}
 
-const photo=document.getElementById('profileImage');photo.addEventListener('load',()=>{photo.style.display='block';document.getElementById('imagePlaceholder').style.display='none'});photo.addEventListener('error',()=>{photo.style.display='none';document.getElementById('imagePlaceholder').style.display='block'});
+function showPlaceholder() {
+  photo.style.display = "none";
+  placeholder.style.display = "block";
+}
 
-document.querySelectorAll('[data-link]').forEach(a=>{const key=a.dataset.link;const value=CONFIG[key];if(!value){a.href='#';a.addEventListener('click',e=>{e.preventDefault();alert('Add your real '+key+' URL in the CONFIG section near the bottom of index.html.')});return;}a.href=key==='email'?'mailto:'+value:value;if(key!=='email'){a.target='_blank';a.rel='noopener noreferrer';}});
+photo.addEventListener("load", showPhoto);
+photo.addEventListener("error", showPlaceholder);
 
-const email=document.getElementById('emailLink');email.href='mailto:'+CONFIG.email;
+if (photo.complete && photo.naturalWidth > 0) {
+  showPhoto();
+}
 
-document.getElementById('saveContact').addEventListener('click',()=>{const vcard=['BEGIN:VCARD','VERSION:3.0','FN:'+CONFIG.name,'TITLE:'+CONFIG.role,'EMAIL:'+CONFIG.email,'TEL;TYPE=CELL:'+CONFIG.phone,'URL:'+CONFIG.linkedin,'URL:'+CONFIG.github,'END:VCARD'].join('\r\n');const blob=new Blob([vcard],{type:'text/vcard;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='Salah-Eldin-Mostafa.vcf';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)});
+document.querySelectorAll("[data-link]").forEach(link => {
+  const key = link.dataset.link;
+  const value = CONFIG[key];
 
-</script></body></html>
+  if (!value) {
+    link.href = "#";
+    link.addEventListener("click", event => {
+      event.preventDefault();
+      alert("Add your real " + key + " URL in the CONFIG section.");
+    });
+    return;
+  }
+
+  link.href = key === "email" ? "mailto:" + value : value;
+
+  if (key !== "email") {
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+  }
+});
+
+document.getElementById("emailLink").href = "mailto:" + CONFIG.email;
+
+document.getElementById("saveContact").addEventListener("click", () => {
+  const vcard = [
+    "BEGIN:VCARD",
+    "VERSION:3.0",
+    "FN:" + CONFIG.name,
+    "TITLE:" + CONFIG.role,
+    "EMAIL:" + CONFIG.email,
+    "TEL;TYPE=CELL:" + CONFIG.phone,
+    "URL:" + CONFIG.linkedin,
+    "URL:" + CONFIG.github,
+    "END:VCARD"
+  ].join("\r\n");
+
+  const blob = new Blob([vcard], {
+    type: "text/vcard;charset=utf-8"
+  });
+
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+
+  link.href = url;
+  link.download = "Salah-Eldin-Mostafa.vcf";
+
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+});
+</script>
+
+</body>
+</html>
