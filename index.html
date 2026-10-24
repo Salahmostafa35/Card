@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#060813">
   <meta name="description" content="Salah Eldin Mostafa — AI Engineer specializing in Computer Vision, Deep Learning, and Machine Learning. Explore featured projects, research pipelines, and professional CV.">
   <meta name="keywords" content="Salah Mostafa, AI Engineer, Computer Vision, Machine Learning, Deep Learning, PyTorch, YOLO, Face Recognition, NLP">
@@ -1445,35 +1445,132 @@
     .reveal-delay-4 { transition-delay: 0.4s; }
 
     /* ==========================================================
-       RESPONSIVE MEDIA QUERIES
+       MULTI-DEVICE RESPONSIVE SUITE (PC, TV, TABLET, PHONE)
        ========================================================== */
-    @media (max-width: 1024px) {
-      .skills-category-grid {
-        grid-template-columns: 1fr;
+
+    /* Universal Focus Styles for Smart TV / Keyboard / D-Pad Remote */
+    :focus-visible {
+      outline: 3px solid var(--cyan) !important;
+      outline-offset: 4px !important;
+      box-shadow: 0 0 25px var(--cyan-glow) !important;
+      border-radius: inherit;
+    }
+
+    /* 1. Smart TVs & Ultra-Wide 4K Screens (>= 1800px / 4K / TV Mode) */
+    @media (min-width: 1800px) {
+      .container {
+        width: min(1560px, calc(100% - 96px));
       }
-      .about-grid {
-        grid-template-columns: 1fr;
+      :root {
+        font-size: 17.5px;
       }
-      .contact-banner {
-        grid-template-columns: 1fr;
-        padding: 36px 28px;
+      .hero {
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 80px;
+        padding: 90px 0 110px;
+      }
+      .profile-3d-card {
+        max-width: 460px;
+      }
+      .profile-photo-frame {
+        height: 420px;
+      }
+      .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 36px;
+      }
+      .hero-title {
+        font-size: clamp(3.5rem, 5.5vw, 5.5rem);
       }
     }
 
-    @media (max-width: 860px) {
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        padding: 30px 0 60px;
+    /* 10-foot Television Display Mode */
+    @media (min-width: 2500px), (tv) {
+      :root {
+        font-size: 22px;
       }
-      .profile-card-container {
-        order: -1;
+      .container {
+        width: min(1800px, calc(100% - 120px));
+      }
+      .btn {
+        min-height: 56px;
+        padding: 0 26px;
+        font-size: 16px;
+      }
+      .project-card {
+        padding: 36px;
+      }
+    }
+
+    /* 2. Standard Laptops & Desktops (1025px - 1799px) */
+    @media (min-width: 1025px) and (max-width: 1799px) {
+      .container {
+        width: min(1200px, calc(100% - 48px));
+      }
+      .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      }
+    }
+
+    /* 3. Tablets & iPads (769px - 1024px) */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .container {
+        width: min(calc(100% - 40px), 940px);
+      }
+      .navbar {
+        padding: 12px 20px;
+      }
+      .nav-links {
+        gap: 18px;
+      }
+      .hero {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        padding: 40px 0 60px;
+      }
+      .hero-title {
+        font-size: clamp(2.4rem, 4.2vw, 3.2rem);
       }
       .profile-3d-card {
-        max-width: 320px;
+        max-width: 340px;
       }
       .profile-photo-frame {
-        height: 310px;
+        height: 320px;
+      }
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+      }
+      .skills-category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .skills-category-card:last-child {
+        grid-column: span 2;
+      }
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+      .contact-banner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 40px 30px;
+      }
+      .hero-highlights {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+    }
+
+    /* 4. Mobile Phones & Phablets (<= 768px) - WITH CENTERED PROJECTS ON PHONE */
+    @media (max-width: 768px) {
+      .container {
+        width: min(calc(100% - 28px), 640px);
+      }
+      .navbar {
+        padding: 10px 16px;
       }
       .nav-links {
         display: none;
@@ -1485,27 +1582,298 @@
         top: calc(100% + 12px);
         left: 0;
         right: 0;
-        background: rgba(10, 14, 30, 0.96);
+        background: rgba(10, 14, 30, 0.98);
         border: 1px solid var(--border-glow);
         border-radius: var(--radius-lg);
         padding: 24px;
-        gap: 18px;
-        backdrop-filter: blur(20px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+        gap: 16px;
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.85);
+        z-index: 1000;
       }
       .mobile-menu-btn {
         display: inline-flex;
+        min-width: 44px;
+        min-height: 44px;
+      }
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        padding: 24px 0 50px;
+        text-align: center;
+      }
+      .hero-eyebrow {
+        margin: 0 auto 16px auto;
+      }
+      .hero-bio {
+        margin: 0 auto 28px auto;
+      }
+      .hero-role-wrapper {
+        justify-content: center;
+      }
+      .profile-card-container {
+        order: -1;
+      }
+      .profile-3d-card {
+        max-width: 320px;
+        margin: 0 auto;
+      }
+      .profile-photo-frame {
+        height: 290px;
+      }
+      .hero-actions {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+      .hero-actions .btn {
+        flex: 1 1 calc(50% - 10px);
+        min-height: 46px;
+      }
+      .hero-highlights {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        justify-items: center;
+      }
+      .stat-item {
+        align-items: center;
+        text-align: center;
+      }
+
+      /* === USER REQUIREMENT: MAKE PROJECTS IN THE CENTER ON PHONE === */
+      #projects {
+        text-align: center;
+      }
+      #projects .section-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+      }
+      #projects .section-header > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      #projects .section-eyebrow {
+        justify-content: center;
+        margin: 0 auto 8px auto;
+      }
+      #projects .section-title {
+        text-align: center;
+      }
+      #projects .section-desc {
+        text-align: center;
+        margin: 0 auto;
+      }
+      .projects-filter-bar {
+        justify-content: center;
+        padding-bottom: 12px;
+        margin-bottom: 20px;
       }
       .projects-grid {
         grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 24px;
       }
-      .section-header {
+      .project-card {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 440px;
+        padding: 26px 22px;
+        text-align: center;
+        align-items: center;
+      }
+      .project-card > div:first-child {
+        width: 100%;
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+      }
+      .project-card > div:last-child {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .project-card-top {
+        justify-content: center;
+        gap: 14px;
+        width: 100%;
+      }
+      .project-title {
+        text-align: center;
+      }
+      .project-desc {
+        text-align: center;
+      }
+      .project-features {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+      }
+      .project-features li {
+        justify-content: center;
+        text-align: center;
+      }
+      .project-tech-stack {
+        justify-content: center;
+        width: 100%;
+      }
+      .project-card-actions {
+        justify-content: center;
+        width: 100%;
+      }
+
+      /* Skills, About & Contact centered on phone */
+      .skills-category-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .skill-category-header {
+        justify-content: center;
+        text-align: center;
+      }
+      .skill-chips-list {
+        justify-content: center;
+      }
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .about-card {
+        padding: 26px 20px;
+        text-align: center;
+      }
+      .quote-box {
+        border-left: none;
+        border-top: 2px solid var(--cyan);
+        border-bottom: 2px solid var(--cyan);
+        padding: 16px 8px;
+      }
+      .contact-banner {
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+        gap: 28px;
+        text-align: center;
+      }
+      .contact-methods {
+        align-items: center;
+      }
+      .contact-method-item {
+        width: 100%;
+        justify-content: center;
       }
       footer {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+      }
+      .footer-left {
+        align-items: center;
+        text-align: center;
+      }
+      .footer-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px 20px;
+      }
+    }
+
+    /* 5. Compact Mobile Phones (<= 480px down to 320px) */
+    @media (max-width: 480px) {
+      .container {
+        width: calc(100% - 20px);
+      }
+      .navbar {
+        padding: 8px 12px;
+      }
+      .brand-mark {
+        width: 36px;
+        height: 36px;
+        font-size: 13px;
+      }
+      .brand-name strong {
+        font-size: 13px;
+      }
+      .brand-name small {
+        font-size: 9px;
+      }
+      .status-badge {
+        display: none;
+      }
+      .hero-title {
+        font-size: clamp(2.1rem, 10.5vw, 2.7rem);
+      }
+      .hero-bio {
+        font-size: 14px;
+        line-height: 1.7;
+      }
+      .hero-actions .btn {
+        flex: 1 1 100%;
+        min-height: 48px;
+      }
+      .profile-3d-card {
+        max-width: 100%;
+        padding: 12px;
+      }
+      .profile-photo-frame {
+        height: 260px;
+      }
+      .project-card {
+        padding: 20px 14px;
+      }
+      .project-card-actions {
+        flex-direction: column;
+      }
+      .project-card-actions .project-link-btn {
+        width: 100%;
+      }
+      .modal-content {
+        padding: 22px 16px;
+        border-radius: var(--radius-lg);
+      }
+      .modal-actions {
+        flex-direction: column;
+      }
+      .modal-actions .btn {
+        width: 100%;
+      }
+      .cv-drive-card {
+        padding: 20px 14px;
+      }
+    }
+
+    /* 6. Landscape Phone / Short Displays */
+    @media (max-height: 520px) and (orientation: landscape) {
+      .navbar-wrapper {
+        position: relative;
+        top: 0;
+      }
+      .hero {
+        grid-template-columns: 1.1fr 0.9fr;
+        padding: 20px 0 40px;
+        gap: 24px;
+        text-align: left;
+      }
+      .hero-eyebrow, .hero-bio {
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .profile-photo-frame {
+        height: 220px;
+      }
+      .profile-3d-card {
+        max-width: 280px;
+      }
+      .modal-content {
+        max-height: 80vh;
       }
     }
 
@@ -1558,12 +1926,6 @@
             <span class="status-dot"></span>
             <span>Available for Hire</span>
           </div>
-
-          <!-- Direct CV Link to Google Drive -->
-          <a class="btn btn-drive btn-sm" href="https://drive.google.com/drive/folders/1B_eTxJaI_REFyZdgjLPWaliD2vENbuhx?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="View CV on Google Drive">
-            <span class="btn-icon">📁</span>
-            <span>View CV</span>
-          </a>
 
           <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" type="button">
             ☰
@@ -2391,6 +2753,14 @@
       mobileBtn.textContent = navMenu.classList.contains("mobile-open") ? "✕" : "☰";
     });
 
+    // Close menu when clicking outside on mobile
+    document.addEventListener("click", (e) => {
+      if (navMenu && mobileBtn && !navMenu.contains(e.target) && !mobileBtn.contains(e.target) && navMenu.classList.contains("mobile-open")) {
+        navMenu.classList.remove("mobile-open");
+        mobileBtn.textContent = "☰";
+      }
+    });
+
     document.querySelectorAll(".nav-link").forEach(link => {
       link.addEventListener("click", () => {
         navMenu.classList.remove("mobile-open");
@@ -2582,7 +2952,6 @@
     const ctx = canvas.getContext("2d");
     let width, height;
     let particles = [];
-    const particleCount = 48;
     const maxDistance = 140;
 
     let mouse = { x: null, y: null, radius: 150 };
@@ -2597,12 +2966,33 @@
       mouse.y = null;
     });
 
-    function resizeCanvas() {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
+    // Touch support for phones and tablets
+    window.addEventListener("touchstart", (e) => {
+      if (e.touches && e.touches.length > 0) {
+        mouse.x = e.touches[0].clientX;
+        mouse.y = e.touches[0].clientY;
+      }
+    }, { passive: true });
+
+    window.addEventListener("touchmove", (e) => {
+      if (e.touches && e.touches.length > 0) {
+        mouse.x = e.touches[0].clientX;
+        mouse.y = e.touches[0].clientY;
+      }
+    }, { passive: true });
+
+    window.addEventListener("touchend", () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    function getParticleCount() {
+      const w = window.innerWidth;
+      if (w < 600) return 20;
+      if (w < 1024) return 32;
+      if (w >= 2200) return 60;
+      return 45;
     }
-    window.addEventListener("resize", resizeCanvas);
-    resizeCanvas();
 
     class Particle {
       constructor() {
@@ -2621,7 +3011,7 @@
         if (this.x < 0 || this.x > width) this.vx = -this.vx;
         if (this.y < 0 || this.y > height) this.vy = -this.vy;
 
-        // Subtle mouse repulsion / attraction
+        // Subtle mouse/touch repulsion & attraction
         if (mouse.x !== null && mouse.y !== null) {
           const dx = mouse.x - this.x;
           const dy = mouse.y - this.y;
@@ -2645,9 +3035,21 @@
       }
     }
 
-    for (let i = 0; i < particleCount; i++) {
-      particles.push(new Particle());
+    function initParticles() {
+      particles = [];
+      const count = getParticleCount();
+      for (let i = 0; i < count; i++) {
+        particles.push(new Particle());
+      }
     }
+
+    function resizeCanvas() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+      initParticles();
+    }
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
 
     function animateNeuralConstellation() {
       ctx.clearRect(0, 0, width, height);
