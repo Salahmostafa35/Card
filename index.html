@@ -1599,10 +1599,24 @@
       }
       .hero {
         grid-template-columns: 1fr;
-        gap: 36px;
+        gap: 0;
         padding: 24px 0 50px;
         text-align: center;
       }
+
+      /* On phones, let hero sections share the grid so the photo can sit
+         between the introduction and the links. Desktop layout is unchanged. */
+      .hero-content { display: contents; }
+      .hero-eyebrow { order: 1; }
+      .hero-title { order: 2; }
+      .hero-role-wrapper { order: 3; }
+      .hero-bio { order: 4; }
+      .profile-card-container {
+        order: 5;
+        margin: 0 0 28px;
+      }
+      .hero-actions { order: 6; }
+      .hero-highlights { order: 7; }
       .hero-eyebrow {
         margin: 0 auto 16px auto;
       }
@@ -1612,15 +1626,16 @@
       .hero-role-wrapper {
         justify-content: center;
       }
-      .profile-card-container {
-        order: -1;
-      }
       .profile-3d-card {
         max-width: 320px;
         margin: 0 auto;
       }
       .profile-photo-frame {
         height: 290px;
+      }
+      .profile-photo-frame img {
+        object-fit: contain;
+        object-position: center;
       }
       .hero-actions {
         display: flex;
@@ -3085,3 +3100,4 @@
 
 </body>
 </html>
+
